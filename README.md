@@ -3,33 +3,99 @@ Python project created for third year robotics module using the ROS framework an
 ![Presentation Image](https://i.ibb.co/BB7n01k/Screenshot-from-2019-08-07-16-45-54.png)
 
 
-# Autonomous Mobile Robotics Project - High-Level Overview
+Certainly, here's the updated README template with a "Technologies" section listing the main technologies used in your single-file Python application:
 
-Robot control and navigation system that leverages the ROS (Robot Operating System) framework. It encompasses a range of functionalities designed to assist in robot navigation, object detection, image processing, and more.
+# Object Finder Robot
 
-## Key Features
+This Python application is designed for a robot that uses the ROS (Robot Operating System) framework to navigate an environment, locate objects based on color detection, and perform various actions. The robot utilizes camera images, laser scans, and odometry data for navigation and object detection.
 
-### Initialization
-Initializes the system by setting up ROS communication, subscribing to data topics, and initializing the navigation stack.
+## Functionality
 
-### Image Processing & Object Detection
-Processes camera images, applies color detection to identify specific objects, and aligns the robot's camera for accurate object detection.
+- The application subscribes to camera images, laser scans, and odometry data.
+- It performs color thresholding to detect objects of specific colors (blue, green, red, yellow).
+- The robot navigates toward detected objects, aligns itself, and calculates distances.
+- Objects within a certain distance are considered found.
+- The robot attempts to align with objects before confirming their presence.
 
-### Navigation
-Manages the robot's navigation by sending goals to the navigation stack. Utilizes a point cloud of the environment to create a 2D occupancy grid, performing various image processing operations to deduce the centroid of each room as the start point for navigation.
 
-### Callback Functions
-Defines callbacks to handle various incoming ROS messages, facilitating real-time interaction with sensors and other devices.
+## Prerequisites
 
-### Coordinate Transformation & Utility Functions
-Includes methods for coordinate conversions and provides utility functions for various operations like rotation, image manipulation, etc.
+- Python 2.7 (Python 3.x is not supported due to ROS compatibility)
+- ROS (Robot Operating System) installed
+- OpenCV
+- numpy
+- math
+- actionlib
+- sensor_msgs
+- nav_msgs
+- geometry_msgs
+- cv_bridge
+- tf
 
-### Goal Completion Handling
-Ensures appropriate actions are taken after navigation goals are completed, canceled, or aborted.
+## Technologies Used
 
-### Main Logic Loop
-The core logic of the system, constantly checking for object detection and executing alignment, navigation, and detection tasks accordingly.
+- **ROS (Robot Operating System):** A flexible framework for writing robot software. It provides various tools, libraries, and conventions that simplify the development of complex robotics applications.
 
+- **OpenCV:** An open-source computer vision and machine learning software library. It provides tools for image processing, object detection, and computer vision tasks.
+
+- **numpy:** A powerful library for numerical computations in Python. It provides support for arrays, matrices, and various mathematical functions.
+
+- **actionlib:** A ROS package that provides a standardized interface for creating and managing actions in a distributed system.
+
+- **sensor_msgs:** A set of messages that provide data from sensors and devices.
+
+- **nav_msgs:** Message types used in navigation and motion planning in ROS.
+
+- **geometry_msgs:** Message types for representing geometric shapes, poses, and transformations.
+
+- **cv_bridge:** A ROS library that provides a bridge between ROS messages and OpenCV.
+
+- **tf:** The transform library in ROS, used for working with coordinate frame transformations.
+
+## Installation
+
+1. Clone the repository:
+
+   ```
+   git clone <repository_url>
+   ```
+
+2. Build the ROS workspace (if not already done):
+
+   ```
+   cd <path_to_workspace>
+   catkin_make
+   ```
+
+3. Source the workspace:
+
+   ```
+   source <path_to_workspace>/devel/setup.bash
+   ```
+
+## Usage
+
+1. Run ROS master:
+
+   ```
+   roscore
+   ```
+
+2. Launch required nodes:
+
+   ```
+   roslaunch <your_robot_description_package> <launch_file>.launch
+   ```
+
+3. Run the Python application:
+
+   ```
+   python object_finder.py
+   ```
+
+---
+
+Please replace placeholders (`<repository_url>`, `<path_to_workspace>`, `<your_robot_description_package>`, `<launch_file>`) with actual values relevant to your project. Additionally, ensure that the technologies listed in the "Technologies Used" section accurately represent the technologies employed in your application.
 ##Authors
 Joshua Yeomans-Gladwin
 
