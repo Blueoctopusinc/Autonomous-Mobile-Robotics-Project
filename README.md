@@ -95,7 +95,7 @@ This Python application is designed for a robot that uses the ROS (Robot Operati
 
 ---
 
-Please replace placeholders (`<repository_url>`, `<path_to_workspace>`, `<your_robot_description_package>`, `<launch_file>`) with actual values relevant to your project. Additionally, ensure that the technologies listed in the "Technologies Used" section accurately represent the technologies employed in your application.
+
 ##Authors
 Joshua Yeomans-Gladwin
 
